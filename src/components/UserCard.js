@@ -1,7 +1,24 @@
 import React from "react";
 
 class UserCard extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isLiked: false,
+      clicks: 0
+    };
+  }
   render() {
+    const handleLikeDislike = () => {
+      this.setState(prevState => {
+        return Object.assign({}, prevState, {
+          isLiked: !prevState.isLiked,
+          clicks: !prevState.isLiked
+            ? prevState.clicks + 1
+            : prevState.clicks - 1
+        });
+      });
+    };
     return (
       <div className="ui card">
         <div className="content">
@@ -27,14 +44,22 @@ class UserCard extends React.Component {
         </div>
         <div className="content">
           <span className="right floated">
-            <i className="heart outline like icon" />
-            17 likes
+            <div
+              className={this.state.isLiked ? "red" : "black"}
+              onClick={handleLikeDislike}
+            >
+              <i className="heart outline like icon" />
+              {this.state.clicks} likes
+            </div>
           </span>
-          <i class="comment icon" />3 comments
+          <i className="comment icon" />3 comments
         </div>
         <div className="extra content">
           <div className="ui large transparent left icon input">
-            <i className="heart outline icon" />
+            <div className={this.state.isLiked ? "red" : "black"}>
+              <i className="heart outline icon" />
+            </div>
+
             <input type="text" placeholder="Add Comment..." />
           </div>
         </div>
