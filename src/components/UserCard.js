@@ -45,10 +45,14 @@ class UserCard extends React.Component {
         <div className="content">
           <span className="right floated">
             <div
-              className={this.state.isLiked ? "red" : "black"}
+              className={this.state.isLiked ? "heart" : "heart outline icon"}
               onClick={handleLikeDislike}
             >
-              <i className="heart outline like icon" />
+              <i
+                className={`heart ${
+                  this.state.isLiked ? "icon red" : "outline icon"
+                } `}
+              />
               {this.state.clicks} likes
             </div>
           </span>
@@ -56,9 +60,7 @@ class UserCard extends React.Component {
         </div>
         <div className="extra content">
           <div className="ui large transparent left icon input">
-            <div className={this.state.isLiked ? "red" : "black"}>
-              <i className="heart outline icon" />
-            </div>
+            <i className="heart outline icon" />
 
             <input type="text" placeholder="Add Comment..." />
           </div>
