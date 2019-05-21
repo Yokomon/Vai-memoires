@@ -5,7 +5,13 @@
   color: red;
 }
 .grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+  display: flex;
+
+  & > * {
+    flex: 1;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
 }
