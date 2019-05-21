@@ -2,6 +2,7 @@ import React from "react";
 import unsplash from "../api/unsplash";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
+import ImageList from "./ImageList";
 import UserCard from "./UserCard";
 import "./CardStyle.scss";
 
@@ -19,7 +20,7 @@ class App extends React.Component {
       <div className="ui container" style={{ marginTop: "10px" }}>
         <Header />
         <SearchBar onSubmit={this.onSearchSubmit} />
-        Found: {this.state.images.length} images
+        <ImageList images={this.state.images} />
         <div className="grid">
           <UserCard />
           <UserCard />
