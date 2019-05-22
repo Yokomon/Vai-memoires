@@ -4,7 +4,7 @@ import Header from "./Header";
 import SearchBar from "./SearchBar";
 import ImageList from "./ImageList";
 import UserCard from "./UserCard";
-import SlideShow from "./SlideShow";
+import Slider from "./Slider";
 import "./CardStyle.scss";
 
 class App extends React.Component {
@@ -21,7 +21,7 @@ class App extends React.Component {
       <div className="ui container" style={{ marginTop: "10px" }}>
         <Header />
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <SlideShow />
+        <Slider />
         <ImageList images={this.state.images} />
         <div className="grid">
           <UserCard />

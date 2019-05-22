@@ -5,13 +5,14 @@
   color: red;
 }
 .grid {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  padding: 10px;
+  border: 1px solid;
+}
 
-  & > * {
-    flex: 1;
-
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
+.ui.card {
+  margin-top: 0;
 }
