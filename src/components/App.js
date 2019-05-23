@@ -4,6 +4,7 @@ import Header from "./Header";
 import SearchBar from "./SearchBar";
 import UserCard from "./UserCard";
 import SlideShow from "./SlideShow";
+import Cta from "./Cta";
 import ModalComponent from "./ModalComponent";
 import "./CardStyle.scss";
 
@@ -21,6 +22,8 @@ class App extends React.Component {
     return (
       <div className="ui container" style={{ marginTop: "10px" }}>
         <Header />
+        <Cta />
+        <ModalComponent />
         <SearchBar onSubmit={this.onSearchSubmit} />
         <SlideShow images={this.state.images} />
         <div className="grid">

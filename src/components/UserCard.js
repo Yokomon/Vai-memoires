@@ -64,6 +64,17 @@ class UserCard extends React.Component {
 
             <input type="text" placeholder="Add Comment..." />
           </div>
+          <button
+            style={{
+              marginTop: "5px",
+              color: "white",
+              backgroundColor: "blue",
+              border: "0.3px solid blue",
+              borderRadius: "3px"
+            }}
+          >
+            Add story
+          </button>
         </div>
       </div>
     );
