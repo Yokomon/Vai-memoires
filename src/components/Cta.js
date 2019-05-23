@@ -3,6 +3,12 @@ import React from "react";
 import "./ModalComponent";
 
 class Cta extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false
+    };
+  }
   render() {
     return (
       <div>
@@ -10,9 +16,8 @@ class Cta extends React.Component {
           data-toggle="ModalComponent"
           className="btn btn-custom"
           data-target="#registerModal"
-        >
-          Click here
-        </button>
+          onClick={() => {}}
+        />
       </div>
     );
   }
